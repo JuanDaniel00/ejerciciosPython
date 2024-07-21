@@ -145,3 +145,18 @@ print("--------------------------------------------")
 
 # 8.	En la tienda de mayoreo San Juanita el impuesto que se debe pagar por los artículos adquiridos se calcula de la siguiente manera: los primeros $30 no causan impuesto, los siguientes $30 tienen un 30% de impuesto y el resto el 40% de impuesto, pero si el costo del producto es mayor a $400, entonces se cobra el 50%. Desarrollar un algoritmo que lea el costo básico de un artículo y calcule el costo total. Muestre el artículo y su costo total.
 
+def calcular_impuesto(costo):
+    if costo <= 30:
+        return 0
+    elif costo <= 60:
+        return costo * 0.3
+    elif costo <= 400:
+        return costo * 0.4
+    else:
+        return costo * 0.5
+
+costo = float(input("Ingrese el costo del artículo: "))
+impuesto = calcular_impuesto(costo)
+costo_total = costo + impuesto
+
+print("Costo total del artículo:", costo_total)
